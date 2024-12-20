@@ -16,6 +16,7 @@
 
 .fortuneContainer {
     height: 315px;
+    margin-top: 40px;
 }
 
 .messageContainer {
@@ -39,12 +40,20 @@
 }
 
 .plainText1 {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .plainText2 {
     font-size: 13px;
     margin-top: 10px;
+}
+
+.amuletText {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 3px;
+    margin-left: 105px
 }
 
 .sendBtn {

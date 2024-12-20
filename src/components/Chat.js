@@ -13,46 +13,28 @@ function Chat({ messages, userInfo }) {
     }
   }, [messages]);
 
-  const handlePrint = async () => {
+  const handleDownload = async () => {
     if (fortuneRef.current) {
       try {
-
         // Convert the DOM element to an image with specified width and height
         const imageUrl = await toPng(fortuneRef.current, {
           pixelRatio: 1.45
         });
 
-        // Open the image in a new tab
-        const newWindow = window.open();
-        if (newWindow) {
-          newWindow.document.write(`
-            <html>
-              <head>
-                <style>
-                  body {
-                    margin: 0 auto;
-                  }
-                </style>
-              </head>
-              <body>
-                <img src="${imageUrl}" alt="Fortune Result" />
-              </body>
-            </html>
-          `);
-          newWindow.document.close(); // Ensure the document is fully loaded
+        // Create a link element to trigger the download
+        const link = document.createElement('a');
+        link.href = imageUrl;
+        link.download = 'fortune-result.png'; // Specify the download file name
+        document.body.appendChild(link); // Append the link to the DOM
+        link.click(); // Trigger the download
+        document.body.removeChild(link); // Clean up the DOM
 
-          newWindow.onload = () => {
-            newWindow.focus();
-            newWindow.print();
-            newWindow.close(); // Close the new window after printing
-          };
-
-        }
       } catch (error) {
         console.error('Error converting to image:', error);
       }
     }
   };
+
 
   return (
     <div
@@ -74,7 +56,7 @@ function Chat({ messages, userInfo }) {
           >
             <FortuneMessage userInfo={userInfo} msg={msg} />
             <div className={styles.btnContainer}>
-              <button className={styles.sendBtn} onClick={handlePrint}>인쇄하기</button>
+              <button className={styles.sendBtn} onClick={handleDownload}>画像を保存する</button>
             </div>
           </div>
         ) : (

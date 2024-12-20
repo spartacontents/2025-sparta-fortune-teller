@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css'; // CSS 파일을 가져옵니다.
 
-
+document.title = "2025 sparta fortune teller";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

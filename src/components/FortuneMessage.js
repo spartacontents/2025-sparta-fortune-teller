@@ -35,24 +35,22 @@ const FortuneMessage = ({ userInfo, msg, key, ref }) => {
         <div className={styles.infoContainer}>
           <p className={styles.mainText}>{userInfo.name}</p>
           <p className={styles.subText}>{userInfo.birthDate}</p>
-          <p className={styles.subText}>{userInfo.birthTime}</p>
         </div>
         <div className={styles.adviceContainer}>
           <p className={styles.plainText1}>{msg.data.advice}</p>
         </div>
         <div className={styles.amuletContainer}>
-          <p className={styles.subText}>
-            <span>추천 부적: </span>
+          <p className={styles.amuletText}>
             {msg.data.amulet}
           </p>
           <span className={styles.plainText1}>{msg.data.amuletDescription}</span>
         </div>
         <div className={styles.fortuneContainer}>
-          <p className={styles.subText}>2025 운세 요약</p>
-          <p className={styles.plainText1}>총운: {msg.data.total}</p>
-          <p className={styles.plainText1}>재물운: {msg.data.finance}</p>
-          <p className={styles.plainText1}>애정운: {msg.data.love}</p>
-          <p className={styles.plainText1}>건강운: {msg.data.health}</p>
+          <p className={styles.plainText1}>全体運: {msg.data.total}</p>
+          <p className={styles.plainText1}>金運: {msg.data.finance}</p>
+          <p className={styles.plainText1}>恋愛運: {msg.data.love}</p>
+          <p className={styles.plainText1}>健康運: {msg.data.health}</p>
+          <p className={styles.plainText1}>仕事運: {msg.data.work}</p>
         </div>
         <div className={styles.messageContainer}>
           <p className={styles.plainText2}>{msg.data.message}</p>
