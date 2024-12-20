@@ -16,7 +16,7 @@ function Counseling() {
 
   const navigate = useNavigate(); // useNavigate 훅 사용
   const goHome = () => {
-    navigate("/"); // 버튼 클릭 시 / 페이지로 이동
+    navigate("/"); // 버튼 클릭 시 
   };
 
   const getQuestions = (concern) => [
