@@ -1,0 +1,27 @@
+@keyframes bellShake {
+  0% { transform: rotate(0deg); } /* 초기 상태 */
+  25% { transform: rotate(-15deg); } /* 왼쪽으로 기울임 */
+  50% { transform: rotate(15deg); } /* 오른쪽으로 기울임 */
+  75% { transform: rotate(-15deg); } /* 다시 왼쪽으로 */
+  100% { transform: rotate(0deg); } /* 원래 위치로 */
+}
+
+.shakingImage {
+  display: inline-block;
+  animation: bellShake 0.5s infinite; /* Adjust the duration and loop infinitely */
+  transform-origin: top center; /* 회전 축 설정 (벨의 고리가 중심이 되도록) */
+}
+
+.loadingContainer {
+  position: fixed; /* 브라우저 기준으로 고정 위치 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 요소 크기 기준 중앙 보정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px; /* 원하는 너비로 설정 */
+  z-index: 9999; /* 다른 요소 위에 표시 */
+  padding: 10px; /* 선택적으로 요소 안 여백 추가 */
+  border-radius: 10px; /* 선택적으로 둥근 모서리 추가 */
+}

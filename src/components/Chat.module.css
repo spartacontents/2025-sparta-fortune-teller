@@ -1,0 +1,61 @@
+.infoContainer {
+    height: 90px;
+    margin: 0;
+}
+
+.adviceContainer {
+    height: 125px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.amuletContainer {
+    height: 95px;
+    box-sizing: border-box;
+}
+
+.fortuneContainer {
+    height: 315px;
+}
+
+.messageContainer {
+    height: 100px;
+}
+
+.btnContainer {
+    position: absolute;
+    right: 1%;
+}
+
+.mainText {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+.subText {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.plainText1 {
+    font-size: 13px;
+}
+
+.plainText2 {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.sendBtn {
+    width: 100px;
+    height: 100%;
+    border: none;
+    border-radius: 40px;
+    background-color: #E8344E;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
