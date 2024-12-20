@@ -14,7 +14,7 @@ function Counseling() {
   const fortuneRef = useRef(null); // fortune 메시지를 참조하는 ref
   const requestUrl = "https://uhg4155446.execute-api.ap-northeast-1.amazonaws.com/dev/api/fortune";
 
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const navigate = useNavigate(); // useNavigate 훅
   const goHome = () => {
     navigate("/"); // 버튼 클릭 시 
   };
