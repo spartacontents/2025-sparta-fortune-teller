@@ -165,7 +165,7 @@
 
 @media screen and (max-width: 480px) {
     .chatContainer {
-        height: 700px; /* 높이 더 줄이기 */
+        height: 550px; /* 높이 더 줄이기 */
         padding: 6px; /* 패딩 더 줄이기 */
         margin-bottom: 8px; /* 하단 여백 조정 */
         margin-top: 60px;
@@ -219,7 +219,7 @@
 
 @media screen and (max-width: 320px) {
     .chatContainer {
-        height: 750px; /* 높이 더 줄이기 */
+        height: 500px; /* 높이 더 줄이기 */
         padding: 4px; /* 패딩 최소화 */
         margin-bottom: 6px; /* 하단 여백 조정 */
         margin-top: 60px;

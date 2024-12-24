@@ -71,9 +71,9 @@ button {
     .mainImgContainer {
         width: 100%;
     }
-    
+
     button {
-        font-size: 15px;
+        font-size: 17px; 
         border-radius: 30px;
     }
 }
@@ -91,7 +91,7 @@ button {
     }
 
     button {
-        font-size: 13px;
+        font-size: 17px; 
         border-radius: 20px;
     }
 }
@@ -124,7 +124,7 @@ button {
     }
 
     button {
-        font-size: 14px; 
+        font-size: 17px; 
         border-radius: 15px; 
     }
 }
