@@ -1,3 +1,15 @@
+.chatContainer {
+    height: 600px;
+    overflow-y: scroll;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* 큰 화면에서 최대 너비 제한 */
+    box-sizing: border-box; /* 패딩이 전체 너비에 영향을 미치지 않도록 설정 */
+}
+
 .infoContainer {
     height: 90px;
     margin: 0;
@@ -26,45 +38,235 @@
 .btnContainer {
     position: absolute;
     right: 1%;
+    padding: 3px 4px;
 }
 
 .mainText {
-    font-size: 30px;
+    font-size: 1.875rem; /* 30px */
     font-weight: bold;
     margin: 0;
 }
+
 .subText {
-    font-size: 18px;
+    font-size: 1.125rem; /* 18px */
     font-weight: bold;
     margin: 0;
 }
 
 .plainText1 {
-    font-size: 12px;
+    font-size: 0.75rem; /* 12px */
 }
 
 .plainText2 {
-    font-size: 13px;
-    margin-top: 10px;
+    font-size: 0.8125rem; /* 13px */
+    margin-top: 0.625rem; /* 10px */
 }
 
 .amuletText {
-    font-size: 13px;
+    font-size: 0.8125rem; /* 13px */
     font-weight: bold;
     margin: 0;
-    padding-top: 3px;
-    margin-left: 105px
+    padding-top: 0.1875rem; /* 3px */
 }
 
 .sendBtn {
-    width: 100px;
     height: 100%;
     border: none;
     border-radius: 40px;
     background-color: #E8344E;
     color: white;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.125rem; /* 18px */
     padding: 8px 12px;
     cursor: pointer;
+}
+
+/* 추가된 스타일 */
+.messageBubble {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 15px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left;
+}
+
+.messageBubble.user {
+    background-color: #dcf8c6;
+    color: #0b7300;
+}
+
+.messageBubble.other {
+    background-color: #ffffff;
+    color: #555;
+}
+
+.messageSender {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* 모바일 최적화를 위한 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+    .chatContainer {
+        height: 650px; /* 높이 조정 */
+        padding: 8px; /* 패딩 줄이기 */
+        max-width: 100%; /* 모바일 화면에서는 최대 너비 제한 제거 */
+        margin-top: 60px;
+    }
+
+    .infoContainer {
+        height: 80px;
+    }
+
+    .adviceContainer {
+        height: 100px;
+    }
+
+    .amuletContainer {
+        height: 85px;
+    }
+
+    .fortuneContainer {
+        height: 280px;
+        margin-top: 30px;
+    }
+
+    .messageContainer {
+        height: 90px;
+    }
+
+    .btnContainer {
+       width: 200px;
+    }
+
+    .mainText {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .subText {
+        font-size: 1rem; /* 16px */
+    }
+
+    .plainText1, .plainText2 {
+        font-size: 0.625rem; /* 10px */
+    }
+
+    .amuletText {
+        font-size: 0.75rem; /* 12px */
+    }
+
+    .sendBtn {
+        font-size: 1rem; /* 16px */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chatContainer {
+        height: 700px; /* 높이 더 줄이기 */
+        padding: 6px; /* 패딩 더 줄이기 */
+        margin-bottom: 8px; /* 하단 여백 조정 */
+        margin-top: 60px;
+    }
+
+    .infoContainer {
+        height: 70px;
+    }
+
+    .adviceContainer {
+        height: 90px;
+    }
+
+    .amuletContainer {
+        height: 75px;
+    }
+
+    .fortuneContainer {
+        height: 250px;
+        margin-top: 20px;
+    }
+
+    .messageContainer {
+        height: 80px;
+    }
+
+    .btnContainer {
+        width: 150px;
+     }
+
+    .mainText {
+        font-size: 1.2rem; /* 20px */
+    }
+
+    .subText {
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .plainText1, .plainText2 {
+        font-size: 0.5625rem; /* 9px */
+    }
+
+    .amuletText {
+        font-size: 0.6875rem; /* 11px */
+    }
+
+    .sendBtn {
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .chatContainer {
+        height: 750px; /* 높이 더 줄이기 */
+        padding: 4px; /* 패딩 최소화 */
+        margin-bottom: 6px; /* 하단 여백 조정 */
+        margin-top: 60px;
+    }
+
+    .infoContainer {
+        height: 60px; /* 높이 축소 */
+    }
+
+    .adviceContainer {
+        height: 80px; /* 높이 축소 */
+    }
+
+    .amuletContainer {
+        height: 65px; /* 높이 축소 */
+    }
+
+    .fortuneContainer {
+        height: 200px; /* 높이 축소 */
+        margin-top: 15px; /* 여백 축소 */
+    }
+
+    .messageContainer {
+        height: 70px; /* 높이 축소 */
+    }
+
+    .btnContainer {
+        width: 100px;
+     }
+
+    .mainText {
+        font-size: 1rem; /* 16px */
+    }
+
+    .subText {
+        font-size: 0.75rem; /* 12px */
+    }
+
+    .plainText1, .plainText2 {
+        font-size: 0.5rem; /* 8px */
+    }
+
+    .amuletText {
+        font-size: 0.625rem; /* 10px */
+    }
+
+    .sendBtn {
+        font-size: 0.75rem; /* 12px */
+    }
 }

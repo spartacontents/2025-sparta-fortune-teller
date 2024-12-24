@@ -39,14 +39,7 @@ function Chat({ messages, userInfo }) {
   return (
     <div
       ref={chatContainerRef}
-      style={{
-        height: '600px', // Fixed height for the chat container
-        overflowY: 'scroll', // Enable vertical scrolling
-        borderRadius: '8px',
-        padding: '10px',
-        marginBottom: '10px',
-        position: 'relative',
-      }}
+      className={styles.chatContainer}
     >
       {messages.map((msg, index) =>
         msg.type === 'fortune' ? (

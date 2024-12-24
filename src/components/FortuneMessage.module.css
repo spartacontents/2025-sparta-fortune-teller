@@ -1,0 +1,57 @@
+/* 기본 스타일 */
+html {
+    font-size: 16px; /* 기본 폰트 크기 */
+}
+
+.fortuneMessageContainer {
+    position: relative; /* 텍스트 배치를 위해 필요 */
+    width: 300px; /* 이미지에 따라 자동 조정 */
+    display: inline-block; /* 이미지 크기에 맞게 컨테이너 크기 조정 */
+    border-radius: 1.875rem; /* 둥근 모서리 */
+    font-size: 0.7rem;
+}
+
+.fortuneMessageContainer img {
+    display: block; /* 이미지 아래 여백 제거 */
+    width: 100%; /* 컨테이너 너비에 맞춤 */
+    height: auto; /* 이미지 비율 유지 */
+    border-radius: 1.875rem; /* 이미지에도 둥근 모서리 적용 */
+}
+
+.textOverlay {
+    position: absolute;
+    top: 3%;
+    left: 0;
+    width: 100%; /* 이미지 크기에 맞춤 */
+    height: 100%; /* 이미지 높이에 맞춤 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 텍스트를 위쪽에 정렬 */
+    padding: 3rem; /* 내부 여백 */
+    box-sizing: border-box;
+}
+
+.infoContainer {
+    font-weight: bold;
+    height: 70px;
+    font-size: 0.9rem;
+    line-height: 0.2;
+}
+
+.name {
+    font-size: 23px;
+}
+
+.adviceContainer {
+    height: 150px;
+
+}
+
+.amuletContainer {
+    height: 90px;
+}
+
+.fortuneContainer {
+    height: 370px;
+    padding-top: 50px;
+}
