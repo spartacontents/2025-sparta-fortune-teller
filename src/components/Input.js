@@ -12,20 +12,20 @@ function Input({ onSend, disabled }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '5px', margin: '20px 0' }}>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '5px', width: '100%' }}>
       <input
         disabled={disabled}
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="ここに入力してください"
-        style={{ flex: 1, padding: '15px', borderRadius: '40px', border: '1px solid #ccc', fontSize: '16px' }}
+        style={{ flex: 1, padding: '10px', borderRadius: '40px', border: '1px solid #ccc', fontSize: '14px' }}
       />
       <button
         type="submit"
         disabled={disabled}
         style={{
-          padding: '15px',
+          padding: '10px',
           borderRadius: '40px',
           border: 'none',
           maxWidth: '70px', // 버튼 너비를 고정
