@@ -5,7 +5,7 @@
     padding: 10px;
     margin-bottom: 10px;
     position: relative;
-    width: 100%;
+    width: 90%;
     max-width: 1200px; /* 큰 화면에서 최대 너비 제한 */
     box-sizing: border-box; /* 패딩이 전체 너비에 영향을 미치지 않도록 설정 */
 }
@@ -165,7 +165,7 @@
 
 @media screen and (max-width: 480px) {
     .chatContainer {
-        height: 550px; /* 높이 더 줄이기 */
+        height: 400px; /* 높이 더 줄이기 */
         padding: 6px; /* 패딩 더 줄이기 */
         margin-bottom: 8px; /* 하단 여백 조정 */
         margin-top: 60px;
@@ -219,7 +219,7 @@
 
 @media screen and (max-width: 320px) {
     .chatContainer {
-        height: 500px; /* 높이 더 줄이기 */
+        height: 400px; /* 높이 더 줄이기 */
         padding: 4px; /* 패딩 최소화 */
         margin-bottom: 6px; /* 하단 여백 조정 */
         margin-top: 60px;

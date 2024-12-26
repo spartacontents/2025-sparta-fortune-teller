@@ -1,0 +1,22 @@
+.chatWrapper {
+    padding: 20px;
+    max-width: 600px; /* 기본 최대 너비 */
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+/* 태블릿 대응 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .chatWrapper {
+        max-width: 400px; /* 태블릿에서는 최대 너비를 400px로 설정 */
+    }
+}
+
+/* 스마트폰 대응 (480px 이하) */
+@media screen and (max-width: 480px) {
+    .chatWrapper {
+        max-width: 300px; /* 스마트폰에서는 최대 너비를 300px로 설정 */
+    }
+}

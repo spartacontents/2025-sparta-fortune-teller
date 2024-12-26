@@ -3,6 +3,7 @@ import Chat from './Chat';
 import Input from './Input';
 import logoImg from '../assets/logo.png';
 import styles from './Home.module.css';
+import counselingStyles from './Counseling.module.css';
 import { useNavigate } from 'react-router-dom';
 import LoadingIndicator from './LoadingIndicator';
 
@@ -102,7 +103,7 @@ function Counseling() {
         <div className={styles.logoContainer} onClick={goHome}>
           <img src={logoImg} alt="logo" />
         </div>
-        <div style={{ padding: "20px", maxWidth: "600px", margin: "auto", borderRadius: "8px" }}>
+        <div className={counselingStyles.chatWrapper}>
           <Chat messages={messages} userInfo={userInfo} fortuneRef={fortuneRef} />
           {isLoading && <LoadingIndicator />} {/* 로딩 메시지 */}
           <Input onSend={handleSend} disabled={isLoading}/>
