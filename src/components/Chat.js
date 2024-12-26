@@ -77,7 +77,6 @@ function Chat({ messages, userInfo }) {
                 style={{
                   display: 'block',
                   marginBottom: '5px',
-                  fontSize: '0.9em',
                   color: msg.sender === 'user' ? '#0b7300' : '#555',
                 }}
               >
