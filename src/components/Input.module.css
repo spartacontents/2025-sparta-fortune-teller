@@ -1,0 +1,64 @@
+.inputContainer {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    max-width: 550px; /* 최대 너비 설정 */
+    position: fixed; /* 화면에 고정 */
+    bottom: 0; /* 화면 하단에 고정 */
+    left: 50%; /* 부모 요소 기준으로 중앙 정렬 */
+    transform: translateX(-50%); /* 요소 자체를 중앙으로 이동 */
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .inputField {
+    flex: 1;
+    padding: 10px;
+    border-radius: 40px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+  }
+  
+  .inputButton {
+    padding: 10px;
+    border-radius: 40px;
+    border: none;
+    max-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  /* 미디어 쿼리: 화면 너비가 480px 이하일 때 */
+  @media (max-width: 480px) {
+    .inputContainer {
+      width: 100%; /* 작은 화면에서는 너비를 100%로 설정 */
+    }
+  
+    .inputField {
+      font-size: 14px;
+    }
+  
+    .inputButton {
+      max-width: 60px;
+    }
+  }
+  
+  /* 미디어 쿼리: 화면 너비가 480px 초과일 때 */
+  @media (max-width: 768px) {
+    .inputContainer {
+      max-width: 400px /* 최대 너비 유지 */
+    }
+  
+    .inputField {
+      font-size: 16px;
+    }
+  
+    .inputButton {
+      max-width: 80px;
+    }
+  }
+  
