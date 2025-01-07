@@ -16,33 +16,41 @@ function Chat({ messages, userInfo }) {
   const handleDownload = async () => {
     if (fortuneRef.current) {
       try {
-        // Calculate the bounding box of the element to ensure the full size is captured
         const fortuneElement = fortuneRef.current;
-        const rect = fortuneElement.getBoundingClientRect();
   
-        // Convert the DOM element to an image with specified width and height
+        // Scroll 영역 포함한 전체 크기 계산
+        const width = fortuneElement.scrollWidth;
+        const height = fortuneElement.scrollHeight;
+  
+        // 스타일 수정: 모바일에서도 올바르게 캡처되도록 설정
+        const originalStyle = fortuneElement.style;
+        fortuneElement.style.width = `${width}px`;
+        fortuneElement.style.height = `${height}px`;
+  
+        // 캡처 옵션 설정
         const imageUrl = await toPng(fortuneElement, {
-          width: rect.width, // Use the full width of the element
-          height: rect.height, // Use the full height of the element
-          pixelRatio: 2, // Higher pixel ratio for better resolution
+          width: width, // 요소의 전체 가로 크기
+          height: height, // 요소의 전체 세로 크기
+          pixelRatio: 2, // 고해상도 설정
         });
   
-        // Create a link element to trigger the download
+        // 원래 스타일 복원
+        fortuneElement.style = originalStyle;
+  
+        // 다운로드 트리거
         const link = document.createElement('a');
         link.href = imageUrl;
-        link.download = 'fortune-result.png'; // Specify the download file name
-        document.body.appendChild(link); // Append the link to the DOM
-        link.click(); // Trigger the download
-        document.body.removeChild(link); // Clean up the DOM
-  
+        link.download = 'fortune-result.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       } catch (error) {
         console.error('Error converting to image:', error);
       }
     }
   };
   
-
-
+  
   return (
     <div
       ref={chatContainerRef}
