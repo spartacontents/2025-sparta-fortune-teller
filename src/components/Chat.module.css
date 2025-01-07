@@ -59,12 +59,12 @@
 }
 
 .plainText2 {
-    font-size: 0.8125rem; /* 13px */
+    font-size: 0.7125rem; /* 13px */
     margin-top: 0.625rem; /* 10px */
 }
 
 .amuletText {
-    font-size: 0.8125rem; /* 13px */
+    font-size: 0.7125rem; /* 13px */
     font-weight: bold;
     margin: 0;
     padding-top: 0.1875rem; /* 3px */
@@ -144,7 +144,7 @@
     }
 
     .mainText {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .subText {
@@ -152,7 +152,7 @@
     }
 
     .plainText1, .plainText2 {
-        font-size: 0.625rem; /* 10px */
+        font-size: 0.525rem; /* 10px */
     }
 
     .amuletText {
@@ -202,7 +202,7 @@
     }
 
     .subText {
-        font-size: 0.875rem; /* 14px */
+        font-size: 0.775rem; /* 14px */
     }
 
     .plainText1, .plainText2 {
