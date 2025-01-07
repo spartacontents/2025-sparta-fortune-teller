@@ -16,11 +16,17 @@ function Chat({ messages, userInfo }) {
   const handleDownload = async () => {
     if (fortuneRef.current) {
       try {
+        // Calculate the bounding box of the element to ensure the full size is captured
+        const fortuneElement = fortuneRef.current;
+        const rect = fortuneElement.getBoundingClientRect();
+  
         // Convert the DOM element to an image with specified width and height
-        const imageUrl = await toPng(fortuneRef.current, {
-          pixelRatio: 1.45
+        const imageUrl = await toPng(fortuneElement, {
+          width: rect.width, // Use the full width of the element
+          height: rect.height, // Use the full height of the element
+          pixelRatio: 2, // Higher pixel ratio for better resolution
         });
-
+  
         // Create a link element to trigger the download
         const link = document.createElement('a');
         link.href = imageUrl;
@@ -28,12 +34,13 @@ function Chat({ messages, userInfo }) {
         document.body.appendChild(link); // Append the link to the DOM
         link.click(); // Trigger the download
         document.body.removeChild(link); // Clean up the DOM
-
+  
       } catch (error) {
         console.error('Error converting to image:', error);
       }
     }
   };
+  
 
 
   return (
