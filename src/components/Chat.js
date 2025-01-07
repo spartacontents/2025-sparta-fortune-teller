@@ -18,26 +18,30 @@ function Chat({ messages, userInfo }) {
       try {
         const fortuneElement = fortuneRef.current;
   
-        // Scroll 영역 포함한 전체 크기 계산
-        const width = fortuneElement.scrollWidth;
-        const height = fortuneElement.scrollHeight;
+        // CSS 변경으로 스크롤 영역도 포함하도록 설정
+        const originalStyle = {
+          width: fortuneElement.style.width,
+          height: fortuneElement.style.height,
+          overflow: fortuneElement.style.overflow,
+        };
   
-        // 스타일 수정: 모바일에서도 올바르게 캡처되도록 설정
-        const originalStyle = fortuneElement.style;
-        fortuneElement.style.width = `${width}px`;
-        fortuneElement.style.height = `${height}px`;
+        fortuneElement.style.width = `${fortuneElement.scrollWidth}px`;
+        fortuneElement.style.height = `${fortuneElement.scrollHeight}px`;
+        fortuneElement.style.overflow = 'visible';
   
-        // 캡처 옵션 설정
+        // 캡처 수행
         const imageUrl = await toPng(fortuneElement, {
-          width: width, // 요소의 전체 가로 크기
-          height: height, // 요소의 전체 세로 크기
-          pixelRatio: 2, // 고해상도 설정
+          width: fortuneElement.scrollWidth,
+          height: fortuneElement.scrollHeight,
+          pixelRatio: 2, // 고해상도
         });
   
         // 원래 스타일 복원
-        fortuneElement.style = originalStyle;
+        fortuneElement.style.width = originalStyle.width;
+        fortuneElement.style.height = originalStyle.height;
+        fortuneElement.style.overflow = originalStyle.overflow;
   
-        // 다운로드 트리거
+        // 이미지 다운로드
         const link = document.createElement('a');
         link.href = imageUrl;
         link.download = 'fortune-result.png';
@@ -48,7 +52,7 @@ function Chat({ messages, userInfo }) {
         console.error('Error converting to image:', error);
       }
     }
-  };
+  };  
   
   
   return (
